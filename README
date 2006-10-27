@@ -5,23 +5,23 @@ update-mime-database command used to extend it. It requires glib2 to be
 installed for building the update command. 
 
 Runtime requirements:
-  cygwin-1.5.19-4
-  glib2-2.8.6-1
-  libxml2-2.6.22-1
+  cygwin-1.5.21-2
+  glib2-2.10.3-1
+  libxml2-2.6.26-1
 
 Build requirements:
 (besides corresponding devel packages)
-  cygwin-1.5.19-4
-  autoconf2.5-2.59-3
+  cygwin-1.5.21-4
+  autoconf2.5-2.60-1
   automake1.9-1.9.6-1
-  binutils-20050610-1
-  cygport-0.1.92-1
+  binutils-20050817-1
+  cygport-0.2.5-1
   gawk-3.1.5-2
   gcc-core-3.4.4-1
-  intltool-0.34.2-1
-  make-3.80-1
+  intltool-0.35.0-1
+  make-3.81-1
   pkg-config-0.20-1
-  sed-4.1.4-1
+  sed-4.1.5-1
 
 Canonical homepage:
   http://freedesktop.org/Software/shared-mime-info
@@ -43,19 +43,19 @@ This will create:
 
 Files included in the binary package:
 
-
   /etc/postinstall/shared-mime-info.sh
   /usr/bin/update-mime-database.exe
   /usr/lib/pkgconfig/shared-mime-info.pc
-  /usr/share/doc/Cygwin/shared-mime-info-0.17.README
-  /usr/share/doc/shared-mime-info-0.17/COPYING
-  /usr/share/doc/shared-mime-info-0.17/ChangeLog
-  /usr/share/doc/shared-mime-info-0.17/NEWS
-  /usr/share/doc/shared-mime-info-0.17/README
+  /usr/share/doc/Cygwin/shared-mime-info-0.19.README
+  /usr/share/doc/shared-mime-info-0.19/COPYING
+  /usr/share/doc/shared-mime-info-0.19/ChangeLog
+  /usr/share/doc/shared-mime-info-0.19/NEWS
+  /usr/share/doc/shared-mime-info-0.19/README
   /usr/share/locale/az/LC_MESSAGES/shared-mime-info.mo
   /usr/share/locale/bg/LC_MESSAGES/shared-mime-info.mo
   /usr/share/locale/cs/LC_MESSAGES/shared-mime-info.mo
   /usr/share/locale/cy/LC_MESSAGES/shared-mime-info.mo
+  /usr/share/locale/da/LC_MESSAGES/shared-mime-info.mo
   /usr/share/locale/de/LC_MESSAGES/shared-mime-info.mo
   /usr/share/locale/el/LC_MESSAGES/shared-mime-info.mo
   /usr/share/locale/eo/LC_MESSAGES/shared-mime-info.mo
@@ -67,11 +67,11 @@ Files included in the binary package:
   /usr/share/locale/it/LC_MESSAGES/shared-mime-info.mo
   /usr/share/locale/ja/LC_MESSAGES/shared-mime-info.mo
   /usr/share/locale/ko/LC_MESSAGES/shared-mime-info.mo
+  /usr/share/locale/lt/LC_MESSAGES/shared-mime-info.mo
   /usr/share/locale/ms/LC_MESSAGES/shared-mime-info.mo
   /usr/share/locale/nb/LC_MESSAGES/shared-mime-info.mo
   /usr/share/locale/nl/LC_MESSAGES/shared-mime-info.mo
   /usr/share/locale/nn/LC_MESSAGES/shared-mime-info.mo
-  /usr/share/locale/no/LC_MESSAGES/shared-mime-info.mo
   /usr/share/locale/pl/LC_MESSAGES/shared-mime-info.mo
   /usr/share/locale/pt/LC_MESSAGES/shared-mime-info.mo
   /usr/share/locale/pt_BR/LC_MESSAGES/shared-mime-info.mo
@@ -88,9 +88,12 @@ Files included in the binary package:
   /usr/share/mime/application/andrew-inset.xml
   /usr/share/mime/application/dicom.xml
   /usr/share/mime/application/docbook+xml.xml
+  /usr/share/mime/application/ecmascript.xml
   /usr/share/mime/application/illustrator.xml
+  /usr/share/mime/application/javascript.xml
   /usr/share/mime/application/mac-binhex40.xml
   /usr/share/mime/application/mathematica.xml
+  /usr/share/mime/application/mbox.xml
   /usr/share/mime/application/msword.xml
   /usr/share/mime/application/octet-stream.xml
   /usr/share/mime/application/oda.xml
@@ -103,7 +106,9 @@ Files included in the binary package:
   /usr/share/mime/application/pkcs7-mime.xml
   /usr/share/mime/application/pkcs7-signature.xml
   /usr/share/mime/application/postscript.xml
+  /usr/share/mime/application/rss+xml.xml
   /usr/share/mime/application/rtf.xml
+  /usr/share/mime/application/sieve.xml
   /usr/share/mime/application/smil.xml
   /usr/share/mime/application/stuffit.xml
   /usr/share/mime/application/vnd.corel-draw.xml
@@ -206,6 +211,7 @@ Files included in the binary package:
   /usr/share/mime/application/x-font-vfont.xml
   /usr/share/mime/application/x-frame.xml
   /usr/share/mime/application/x-gameboy-rom.xml
+  /usr/share/mime/application/x-gba-rom.xml
   /usr/share/mime/application/x-gdbm.xml
   /usr/share/mime/application/x-gedcom.xml
   /usr/share/mime/application/x-genesis-rom.xml
@@ -223,10 +229,9 @@ Files included in the binary package:
   /usr/share/mime/application/x-gzpostscript.xml
   /usr/share/mime/application/x-hdf.xml
   /usr/share/mime/application/x-ipod-firmware.xml
-  /usr/share/mime/application/x-jar.xml
+  /usr/share/mime/application/x-java-archive.xml
   /usr/share/mime/application/x-java-jnlp-file.xml
   /usr/share/mime/application/x-java.xml
-  /usr/share/mime/application/x-javascript.xml
   /usr/share/mime/application/x-jbuilder-project.xml
   /usr/share/mime/application/x-karbon.xml
   /usr/share/mime/application/x-kchart.xml
@@ -277,6 +282,7 @@ Files included in the binary package:
   /usr/share/mime/application/x-pw.xml
   /usr/share/mime/application/x-python-bytecode.xml
   /usr/share/mime/application/x-quattropro.xml
+  /usr/share/mime/application/x-quicktime-media-link.xml
   /usr/share/mime/application/x-qw.xml
   /usr/share/mime/application/x-rar.xml
   /usr/share/mime/application/x-reject.xml
@@ -292,6 +298,7 @@ Files included in the binary package:
   /usr/share/mime/application/x-siag.xml
   /usr/share/mime/application/x-slp.xml
   /usr/share/mime/application/x-sms-rom.xml
+  /usr/share/mime/application/x-snes-rom.xml
   /usr/share/mime/application/x-sqlite2.xml
   /usr/share/mime/application/x-sqlite3.xml
   /usr/share/mime/application/x-srt.xml
@@ -319,7 +326,10 @@ Files included in the binary package:
   /usr/share/mime/application/xhtml+xml.xml
   /usr/share/mime/application/xml.xml
   /usr/share/mime/application/xslt+xml.xml
+  /usr/share/mime/application/xspf+xml.xml
   /usr/share/mime/application/zip.xml
+  /usr/share/mime/audio/AMR-WB.xml
+  /usr/share/mime/audio/AMR.xml
   /usr/share/mime/audio/ac3.xml
   /usr/share/mime/audio/basic.xml
   /usr/share/mime/audio/midi.xml
@@ -332,6 +342,7 @@ Files included in the binary package:
   /usr/share/mime/audio/x-aifc.xml
   /usr/share/mime/audio/x-aiff.xml
   /usr/share/mime/audio/x-aiffc.xml
+  /usr/share/mime/audio/x-ape.xml
   /usr/share/mime/audio/x-flac+ogg.xml
   /usr/share/mime/audio/x-flac.xml
   /usr/share/mime/audio/x-it.xml
@@ -340,6 +351,8 @@ Files included in the binary package:
   /usr/share/mime/audio/x-mpeg.xml
   /usr/share/mime/audio/x-mpegurl.xml
   /usr/share/mime/audio/x-ms-asx.xml
+  /usr/share/mime/audio/x-ms-wma.xml
+  /usr/share/mime/audio/x-musepack.xml
   /usr/share/mime/audio/x-riff.xml
   /usr/share/mime/audio/x-s3m.xml
   /usr/share/mime/audio/x-scpls.xml
@@ -369,20 +382,27 @@ Files included in the binary package:
   /usr/share/mime/image/vnd.rn-realpix.xml
   /usr/share/mime/image/x-3ds.xml
   /usr/share/mime/image/x-applix-graphics.xml
+  /usr/share/mime/image/x-canon-crw.xml
   /usr/share/mime/image/x-cmu-raster.xml
   /usr/share/mime/image/x-compressed-xcf.xml
   /usr/share/mime/image/x-dib.xml
   /usr/share/mime/image/x-eps.xml
   /usr/share/mime/image/x-fits.xml
   /usr/share/mime/image/x-fpx.xml
+  /usr/share/mime/image/x-fuji-raf.xml
   /usr/share/mime/image/x-ico.xml
   /usr/share/mime/image/x-iff.xml
   /usr/share/mime/image/x-ilbm.xml
   /usr/share/mime/image/x-jng.xml
+  /usr/share/mime/image/x-kodak-dcr.xml
+  /usr/share/mime/image/x-kodak-kdc.xml
   /usr/share/mime/image/x-lwo.xml
   /usr/share/mime/image/x-lws.xml
+  /usr/share/mime/image/x-minolta-mrw.xml
   /usr/share/mime/image/x-msod.xml
   /usr/share/mime/image/x-niff.xml
+  /usr/share/mime/image/x-nikon-nef.xml
+  /usr/share/mime/image/x-olympus-orf.xml
   /usr/share/mime/image/x-pcx.xml
   /usr/share/mime/image/x-photo-cd.xml
   /usr/share/mime/image/x-pict.xml
@@ -430,6 +450,7 @@ Files included in the binary package:
   /usr/share/mime/packages/freedesktop.org.xml
   /usr/share/mime/text/calendar.xml
   /usr/share/mime/text/css.xml
+  /usr/share/mime/text/csv.xml
   /usr/share/mime/text/directory.xml
   /usr/share/mime/text/enriched.xml
   /usr/share/mime/text/html.xml
@@ -439,7 +460,6 @@ Files included in the binary package:
   /usr/share/mime/text/rdf.xml
   /usr/share/mime/text/rfc822-headers.xml
   /usr/share/mime/text/richtext.xml
-  /usr/share/mime/text/rss.xml
   /usr/share/mime/text/sgml.xml
   /usr/share/mime/text/spreadsheet.xml
   /usr/share/mime/text/tab-separated-values.xml
@@ -453,7 +473,6 @@ Files included in the binary package:
   /usr/share/mime/text/x-c++src.xml
   /usr/share/mime/text/x-changelog.xml
   /usr/share/mime/text/x-chdr.xml
-  /usr/share/mime/text/x-comma-separated-values.xml
   /usr/share/mime/text/x-copying.xml
   /usr/share/mime/text/x-credits.xml
   /usr/share/mime/text/x-csharp.xml
@@ -479,6 +498,7 @@ Files included in the binary package:
   /usr/share/mime/text/x-moc.xml
   /usr/share/mime/text/x-mup.xml
   /usr/share/mime/text/x-objcsrc.xml
+  /usr/share/mime/text/x-ocaml.xml
   /usr/share/mime/text/x-pascal.xml
   /usr/share/mime/text/x-patch.xml
   /usr/share/mime/text/x-python.xml
@@ -493,8 +513,10 @@ Files included in the binary package:
   /usr/share/mime/text/x-troff-me.xml
   /usr/share/mime/text/x-troff-mm.xml
   /usr/share/mime/text/x-troff-ms.xml
+  /usr/share/mime/text/x-txt2tags.xml
   /usr/share/mime/text/x-uil.xml
   /usr/share/mime/text/x-uri.xml
+  /usr/share/mime/text/x-vhdl.xml
   /usr/share/mime/text/x-xmi.xml
   /usr/share/mime/text/x-xslfo.xml
   /usr/share/mime/text/xmcd.xml
@@ -520,6 +542,9 @@ Files included in the binary package:
 ------------------
 
 Port Notes:
+
+----- version 0.19-1 -----
+Version bump.
 
 ----- version 0.17-1 -----
 Version bump.
