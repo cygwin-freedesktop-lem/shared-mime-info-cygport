@@ -6,8 +6,8 @@ installed for building the update command.
 
 Runtime requirements:
   cygwin-1.5.24-2
-  glib2-2.12.11-1
-  libxml2-2.6.28-1
+  glib2-2.12.13-1
+  libxml2-2.6.29-1
 
 Build requirements:
 (besides corresponding devel packages)
@@ -15,10 +15,10 @@ Build requirements:
   autoconf2.5-2.61-1
   automake1.9-1.9.6-2
   binutils-20050817-1
-  cygport-0.2.11-1
+  cygport-0.3.5-1
   gawk-3.1.5-4
   gcc-core-3.4.4-3
-  intltool-0.35.4-1
+  intltool-0.35.5-1
   make-3.81-1
   pkg-config-0.21-1
   sed-4.1.5-2
@@ -32,15 +32,15 @@ Canonical download:
 -------------------------------------------
 
 Build instructions:
-  unpack shared-mime-info-0.20-1-src.tar.bz2
+  unpack shared-mime-info-0.22-1-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./shared-mime-info-0.20-1.cygport all
+  cygport ./shared-mime-info-0.22-1.cygport all
 
 This will create:
-  /usr/src/shared-mime-info-0.20-1-src.tar.bz2
-  /usr/src/shared-mime-info-0.20-1.tar.bz2
+  /usr/src/shared-mime-info-0.22-1-src.tar.bz2
+  /usr/src/shared-mime-info-0.22-1.tar.bz2
 
 -------------------------------------------
 
@@ -48,13 +48,14 @@ Files included in the binary package:
 
   /etc/postinstall/shared-mime-info.sh
   /usr/bin/update-mime-database.exe
-  /usr/share/doc/Cygwin/shared-mime-info-0.21.README
-  /usr/share/doc/shared-mime-info-0.21/COPYING
-  /usr/share/doc/shared-mime-info-0.21/ChangeLog
-  /usr/share/doc/shared-mime-info-0.21/NEWS
-  /usr/share/doc/shared-mime-info-0.21/README
+  /usr/share/doc/Cygwin/shared-mime-info-0.22.README
+  /usr/share/doc/shared-mime-info-0.22/COPYING
+  /usr/share/doc/shared-mime-info-0.22/ChangeLog
+  /usr/share/doc/shared-mime-info-0.22/NEWS
+  /usr/share/doc/shared-mime-info-0.22/README
   /usr/share/locale/az/LC_MESSAGES/shared-mime-info.mo
   /usr/share/locale/bg/LC_MESSAGES/shared-mime-info.mo
+  /usr/share/locale/ca/LC_MESSAGES/shared-mime-info.mo
   /usr/share/locale/cs/LC_MESSAGES/shared-mime-info.mo
   /usr/share/locale/cy/LC_MESSAGES/shared-mime-info.mo
   /usr/share/locale/da/LC_MESSAGES/shared-mime-info.mo
@@ -108,6 +109,7 @@ Files included in the binary package:
   /usr/share/mime/application/pkcs7-mime.xml
   /usr/share/mime/application/pkcs7-signature.xml
   /usr/share/mime/application/postscript.xml
+  /usr/share/mime/application/prs.plucker.xml
   /usr/share/mime/application/ram.xml
   /usr/share/mime/application/rss+xml.xml
   /usr/share/mime/application/rtf.xml
@@ -157,6 +159,7 @@ Files included in the binary package:
   /usr/share/mime/application/vnd.sun.xml.writer.global.xml
   /usr/share/mime/application/vnd.sun.xml.writer.template.xml
   /usr/share/mime/application/vnd.sun.xml.writer.xml
+  /usr/share/mime/application/vnd.symbian.install.xml
   /usr/share/mime/application/vnd.wordperfect.xml
   /usr/share/mime/application/x-7z-compressed.xml
   /usr/share/mime/application/x-abiword.xml
@@ -283,7 +286,7 @@ Files included in the binary package:
   /usr/share/mime/application/x-nautilus-link.xml
   /usr/share/mime/application/x-nes-rom.xml
   /usr/share/mime/application/x-netcdf.xml
-  /usr/share/mime/application/x-netscape-bookmarks.xml
+  /usr/share/mime/application/x-nintendo-ds-rom.xml
   /usr/share/mime/application/x-object.xml
   /usr/share/mime/application/x-ole-storage.xml
   /usr/share/mime/application/x-oleo.xml
@@ -353,8 +356,10 @@ Files included in the binary package:
   /usr/share/mime/audio/ac3.xml
   /usr/share/mime/audio/basic.xml
   /usr/share/mime/audio/midi.xml
+  /usr/share/mime/audio/mp2.xml
   /usr/share/mime/audio/mp4.xml
   /usr/share/mime/audio/mpeg.xml
+  /usr/share/mime/audio/ogg.xml
   /usr/share/mime/audio/prs.sid.xml
   /usr/share/mime/audio/vnd.rn-realaudio.xml
   /usr/share/mime/audio/x-adpcm.xml
@@ -364,6 +369,7 @@ Files included in the binary package:
   /usr/share/mime/audio/x-ape.xml
   /usr/share/mime/audio/x-flac+ogg.xml
   /usr/share/mime/audio/x-flac.xml
+  /usr/share/mime/audio/x-iriver-pla.xml
   /usr/share/mime/audio/x-it.xml
   /usr/share/mime/audio/x-matroska.xml
   /usr/share/mime/audio/x-minipsf.xml
@@ -379,6 +385,7 @@ Files included in the binary package:
   /usr/share/mime/audio/x-s3m.xml
   /usr/share/mime/audio/x-scpls.xml
   /usr/share/mime/audio/x-speex+ogg.xml
+  /usr/share/mime/audio/x-speex.xml
   /usr/share/mime/audio/x-stm.xml
   /usr/share/mime/audio/x-tta.xml
   /usr/share/mime/audio/x-voc.xml
@@ -418,6 +425,7 @@ Files included in the binary package:
   /usr/share/mime/image/x-dcraw.xml
   /usr/share/mime/image/x-dds.xml
   /usr/share/mime/image/x-dib.xml
+  /usr/share/mime/image/x-emf.xml
   /usr/share/mime/image/x-eps.xml
   /usr/share/mime/image/x-fits.xml
   /usr/share/mime/image/x-fpx.xml
@@ -507,7 +515,9 @@ Files included in the binary package:
   /usr/share/mime/text/tab-separated-values.xml
   /usr/share/mime/text/troff.xml
   /usr/share/mime/text/vnd.rn-realtext.xml
+  /usr/share/mime/text/vnd.sun.j2me.app-descriptor.xml
   /usr/share/mime/text/vnd.wap.wml.xml
+  /usr/share/mime/text/vnd.wap.wmlscript.xml
   /usr/share/mime/text/x-adasrc.xml
   /usr/share/mime/text/x-authors.xml
   /usr/share/mime/text/x-bibtex.xml
@@ -524,6 +534,7 @@ Files included in the binary package:
   /usr/share/mime/text/x-dsrc.xml
   /usr/share/mime/text/x-dtd.xml
   /usr/share/mime/text/x-emacs-lisp.xml
+  /usr/share/mime/text/x-erlang.xml
   /usr/share/mime/text/x-fortran.xml
   /usr/share/mime/text/x-gettext-translation-template.xml
   /usr/share/mime/text/x-gettext-translation.xml
@@ -572,6 +583,7 @@ Files included in the binary package:
   /usr/share/mime/video/isivideo.xml
   /usr/share/mime/video/mp4.xml
   /usr/share/mime/video/mpeg.xml
+  /usr/share/mime/video/ogg.xml
   /usr/share/mime/video/quicktime.xml
   /usr/share/mime/video/vivo.xml
   /usr/share/mime/video/vnd.rn-realvideo.xml
@@ -587,13 +599,17 @@ Files included in the binary package:
   /usr/share/mime/video/x-ogm+ogg.xml
   /usr/share/mime/video/x-sgi-movie.xml
   /usr/share/mime/video/x-theora+ogg.xml
+  /usr/share/mime/x-epoc/x-sisx-app.xml
   /usr/share/pkgconfig/shared-mime-info.pc
 
 ------------------
 
 Port Notes:
 
------ version 0.20-1 -----
+----- version 0.22-1 -----
+Version bump.
+
+----- version 0.21-1 -----
 Version bump.
 Patched to accept chemical/* mimetypes; see FreeDesktop bug 335.
 
