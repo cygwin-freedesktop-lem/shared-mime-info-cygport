@@ -8,3 +8,11 @@ PATCH_URI="mirror://portage/x11-misc/${PN}/files/${P}-parallel-make.patch"
 # for chemical-mime-data
 PATCH_URI+=" 0.40-category-chemical.patch"
 PATCH_URI+=" 0.60-make-all.patch"
+
+# 1) The database updates more often than this package, so we just end up
+#    shipping an obsolete database;
+# 2) update-mime-database has to be run anyway on postinstall;
+# 3) cygport creates the UAC .manifest only during postinstall, not in
+#    time for install-exec-hook.
+#
+CYGCONF_ARGS="--disable-update-mimedb"
