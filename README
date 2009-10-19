@@ -5,20 +5,20 @@ update-mime-database command used to extend it. It requires glib2 to be
 installed for building the update command. 
 
 Runtime requirements:
-  cygwin-1.7.0-48
-  libgcc1-4.3.2-2
-  libglib2.0_0-2.20.3-1
-  libxml2-2.7.3-10
+  cygwin-1.7.0-62
+  libgcc1-4.3.4-1
+  libglib2.0_0-2.20.5-1
+  libxml2-2.7.3-11
 
 Build requirements:
 (besides corresponding devel packages)
   autoconf2.5-2.63-10
-  automake1.10-1.10.2-10
-  binutils-20080624-2
-  cygport-0.9.6-1
-  gawk-3.1.6-2
-  gcc4-core-4.3.2-2
-  gnome-common-2.26.0-1
+  automake1.11-1.11-10
+  binutils-2.19.51-1
+  cygport-0.9.10-1
+  gawk-3.1.7-1
+  gcc4-core-4.3.4-1
+  gnome-common-2.26.0-2
   intltool-0.40.6-1
   make-3.81-2
   pkg-config-0.23b-10
@@ -33,74 +33,22 @@ Canonical download:
 -------------------------------------------
 
 Build instructions:
-  unpack shared-mime-info-0.60-X-src.tar.bz2
+  unpack shared-mime-info-0.70-X-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./shared-mime-info-0.60-X.cygport all
+  cygport ./shared-mime-info-0.70-X.cygport all
 
 This will create:
-  /usr/src/shared-mime-info-0.60-X-src.tar.bz2
-  /usr/src/shared-mime-info-0.60-X.tar.bz2
+  /usr/src/shared-mime-info-0.70-X-src.tar.bz2
+  /usr/src/shared-mime-info-0.70-X.tar.bz2
 
 -------------------------------------------
 
-Files included in the binary package:
-
-  /etc/postinstall/shared-mime-info.sh
-  /etc/preremove/shared-mime-info.sh
-  /usr/bin/update-mime-database.exe
-  /usr/bin/update-mime-database.exe.manifest
-  /usr/share/doc/shared-mime-info/COPYING
-  /usr/share/doc/shared-mime-info/ChangeLog
-  /usr/share/doc/shared-mime-info/HACKING
-  /usr/share/doc/shared-mime-info/NEWS
-  /usr/share/doc/shared-mime-info/README
-  /usr/share/locale/az/LC_MESSAGES/shared-mime-info.mo
-  /usr/share/locale/be@latin/LC_MESSAGES/shared-mime-info.mo
-  /usr/share/locale/bg/LC_MESSAGES/shared-mime-info.mo
-  /usr/share/locale/ca/LC_MESSAGES/shared-mime-info.mo
-  /usr/share/locale/cs/LC_MESSAGES/shared-mime-info.mo
-  /usr/share/locale/cy/LC_MESSAGES/shared-mime-info.mo
-  /usr/share/locale/da/LC_MESSAGES/shared-mime-info.mo
-  /usr/share/locale/de/LC_MESSAGES/shared-mime-info.mo
-  /usr/share/locale/el/LC_MESSAGES/shared-mime-info.mo
-  /usr/share/locale/en_GB/LC_MESSAGES/shared-mime-info.mo
-  /usr/share/locale/eo/LC_MESSAGES/shared-mime-info.mo
-  /usr/share/locale/es/LC_MESSAGES/shared-mime-info.mo
-  /usr/share/locale/eu/LC_MESSAGES/shared-mime-info.mo
-  /usr/share/locale/fi/LC_MESSAGES/shared-mime-info.mo
-  /usr/share/locale/fr/LC_MESSAGES/shared-mime-info.mo
-  /usr/share/locale/ga/LC_MESSAGES/shared-mime-info.mo
-  /usr/share/locale/hu/LC_MESSAGES/shared-mime-info.mo
-  /usr/share/locale/id/LC_MESSAGES/shared-mime-info.mo
-  /usr/share/locale/it/LC_MESSAGES/shared-mime-info.mo
-  /usr/share/locale/ja/LC_MESSAGES/shared-mime-info.mo
-  /usr/share/locale/ko/LC_MESSAGES/shared-mime-info.mo
-  /usr/share/locale/lt/LC_MESSAGES/shared-mime-info.mo
-  /usr/share/locale/ms/LC_MESSAGES/shared-mime-info.mo
-  /usr/share/locale/nb/LC_MESSAGES/shared-mime-info.mo
-  /usr/share/locale/nl/LC_MESSAGES/shared-mime-info.mo
-  /usr/share/locale/nn/LC_MESSAGES/shared-mime-info.mo
-  /usr/share/locale/pl/LC_MESSAGES/shared-mime-info.mo
-  /usr/share/locale/pt/LC_MESSAGES/shared-mime-info.mo
-  /usr/share/locale/pt_BR/LC_MESSAGES/shared-mime-info.mo
-  /usr/share/locale/ru/LC_MESSAGES/shared-mime-info.mo
-  /usr/share/locale/rw/LC_MESSAGES/shared-mime-info.mo
-  /usr/share/locale/sq/LC_MESSAGES/shared-mime-info.mo
-  /usr/share/locale/sr/LC_MESSAGES/shared-mime-info.mo
-  /usr/share/locale/sv/LC_MESSAGES/shared-mime-info.mo
-  /usr/share/locale/uk/LC_MESSAGES/shared-mime-info.mo
-  /usr/share/locale/vi/LC_MESSAGES/shared-mime-info.mo
-  /usr/share/locale/zh_CN/LC_MESSAGES/shared-mime-info.mo
-  /usr/share/locale/zh_TW/LC_MESSAGES/shared-mime-info.mo
-  /usr/share/man/man1/update-mime-database.1.gz
-  /usr/share/mime/packages/freedesktop.org.xml
-  /usr/share/pkgconfig/shared-mime-info.pc
-
-------------------
-
 Port Notes:
+
+----- version 0.70-1 -----
+Version bump.
 
 ----- version 0.60-2 -----
 Rebuilt to add .manifest files for avoiding UAC issues.
