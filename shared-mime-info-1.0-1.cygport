@@ -8,7 +8,6 @@ SRC_URI="http://freedesktop.org/~hadess/${P}.tar.xz"
 PATCH_URI="
 	0.90-category-chemical.patch
 "
-#	0.90-make-all.patch
 
 # 1) The database updates more often than this package, so we just end up
 #    shipping an obsolete database;
@@ -17,3 +16,4 @@ PATCH_URI="
 #    time for install-exec-hook.
 #
 CYGCONF_ARGS="--disable-update-mimedb"
+MAKEOPTS+=" -j1"
