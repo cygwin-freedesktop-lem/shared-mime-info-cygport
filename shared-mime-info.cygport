@@ -1,0 +1,27 @@
+inherit gnome2
+
+NAME="shared-mime-info"
+VERSION=1.1
+RELEASE=1
+CATEGORY="X11"
+SUMMARY="Shared MIME info database"
+DESCRIPTION="This package contains the core database of common types and the
+update-mime-database command used to extend it."
+HOMEPAGE="http://freedesktop.org/wiki/Software/shared-mime-info"
+SRC_URI="http://freedesktop.org/~hadess/${P}.tar.xz"
+
+# for chemical-mime-data
+PATCH_URI="
+	0.90-category-chemical.patch
+"
+
+MAKEOPTS+=" -j1"
+
+src_compile() {
+	cd ${S}
+	cygautoreconf
+	cd ${B}
+	manifestize ${D}/usr/bin/update-mime-database.exe
+	cygconf
+	cygmake
+}
