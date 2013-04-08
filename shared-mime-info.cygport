@@ -21,7 +21,7 @@ src_compile() {
 	cd ${S}
 	cygautoreconf
 	cd ${B}
-	manifestize ${D}/usr/bin/update-mime-database.exe
+	manifestize ${B}/update-mime-database.exe
 	cygconf
 	cygmake
 }
