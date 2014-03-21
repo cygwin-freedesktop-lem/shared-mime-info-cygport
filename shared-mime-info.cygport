@@ -1,19 +1,22 @@
 inherit gnome2
 
 NAME="shared-mime-info"
-VERSION=1.1
+VERSION=1.2
 RELEASE=1
 CATEGORY="X11"
 SUMMARY="Shared MIME info database"
 DESCRIPTION="This package contains the core database of common types and the
 update-mime-database command used to extend it."
 HOMEPAGE="http://freedesktop.org/wiki/Software/shared-mime-info"
-SRC_URI="http://freedesktop.org/~hadess/${P}.tar.xz"
-
+SRC_URI="http://freedesktop.org/~hadess/${NAME}-${VERSION}.tar.xz"
+# don't try to open ODF files with file-roller/engrampa/ark
+PATCH_URI="http://pkgs.fedoraproject.org/cgit/shared-mime-info.git/plain/0001-Remove-sub-classing-from-OO.o-mime-types.patch"
 # for chemical-mime-data
-PATCH_URI="
-	0.90-category-chemical.patch
-"
+PATCH_URI+=" 0.90-category-chemical.patch"
+# treat .bat and .exe as natively executable
+PATCH_URI+=" 1.2-cygwin-exe.patch"
+# fix Permission denied error in fdatasync (fixed for 1.3)
+PATCH_URI+=" 1.2-cygwin-fdo70559.patch"
 
 MAKEOPTS+=" -j1"
 
@@ -22,6 +25,17 @@ src_compile() {
 	cygautoreconf
 	cd ${B}
 	manifestize ${B}/update-mime-database.exe
-	cygconf
+	# leave enabled for testing; cygport will clean up the generated files
+	cygconf # --disable-update-mimedb
 	cygmake
+}
+
+
+src_install() {
+	cd ${B}
+	cyginstall
+
+	# The po/ files are just for intltool; up-m-db isn't localized
+	# (although it has translatable strings, it is listed in POTFILES.skip)
+	rm -fr ${D}/usr/share/locale/
 }
