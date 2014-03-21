@@ -1,1 +1,1 @@
-find /usr/share/mime/ -maxdepth 1 -type f -delete
+find /usr/share/mime -mindepth 1 ! -path '*/mime/packages*' -delete
