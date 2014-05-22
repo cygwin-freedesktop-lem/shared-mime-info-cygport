@@ -1,7 +1,7 @@
 inherit gnome2
 
 NAME="shared-mime-info"
-VERSION=1.2
+VERSION=1.3
 RELEASE=1
 CATEGORY="X11"
 SUMMARY="Shared MIME info database"
@@ -15,8 +15,6 @@ PATCH_URI="http://pkgs.fedoraproject.org/cgit/shared-mime-info.git/plain/0001-Re
 PATCH_URI+=" 0.90-category-chemical.patch"
 # treat .bat and .exe as natively executable
 PATCH_URI+=" 1.2-cygwin-exe.patch"
-# fix Permission denied error in fdatasync (fixed for 1.3)
-PATCH_URI+=" 1.2-cygwin-fdo70559.patch"
 
 MAKEOPTS+=" -j1"
 
@@ -25,8 +23,9 @@ src_compile() {
 	cygautoreconf
 	cd ${B}
 	manifestize ${B}/update-mime-database.exe
+	# fdatasync: http://bugs.freedesktop.org/70366
 	# leave enabled for testing; cygport will clean up the generated files
-	cygconf # --disable-update-mimedb
+	cygconf ac_cv_func_fdatasync=no  # --disable-update-mimedb
 	cygmake
 }
 
@@ -39,3 +38,6 @@ src_install() {
 	# (although it has translatable strings, it is listed in POTFILES.skip)
 	rm -fr ${D}/usr/share/locale/
 }
+
+shared_mime_info_CONTENTS="etc/postinstall etc/preremove/ usr/bin/ usr/share/doc/
+	usr/share/man/ usr/share/mime/packages/ usr/share/pkgconfig/"
