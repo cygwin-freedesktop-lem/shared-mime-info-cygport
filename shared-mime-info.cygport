@@ -2,7 +2,7 @@ inherit gnome2
 
 NAME="shared-mime-info"
 VERSION=1.3
-RELEASE=1
+RELEASE=2
 CATEGORY="X11"
 SUMMARY="Shared MIME info database"
 DESCRIPTION="This package contains the core database of common types and the
@@ -11,6 +11,11 @@ HOMEPAGE="http://freedesktop.org/wiki/Software/shared-mime-info"
 SRC_URI="http://freedesktop.org/~hadess/${NAME}-${VERSION}.tar.xz"
 # don't try to open ODF files with file-roller/engrampa/ark
 PATCH_URI="http://pkgs.fedoraproject.org/cgit/shared-mime-info.git/plain/0001-Remove-sub-classing-from-OO.o-mime-types.patch"
+# upstream: do not update database if not necessary
+PATCH_URI+=" http://pkgs.fedoraproject.org/cgit/shared-mime-info.git/plain/0013-Skip-mime-database-update-if-packages-are-older-than.patch"
+PATCH_URI+=" http://pkgs.fedoraproject.org/cgit/shared-mime-info.git/plain/0014-Add-n-option-to-update-mime-database.patch"
+# upstream: speed up detection of PNGs
+PATCH_URI+=" 1.3-drop-apple-png.patch"
 # for chemical-mime-data
 PATCH_URI+=" 0.90-category-chemical.patch"
 # treat .bat and .exe as natively executable
