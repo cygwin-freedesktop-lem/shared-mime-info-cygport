@@ -2,7 +2,7 @@ inherit gnome2
 
 NAME="shared-mime-info"
 VERSION=1.6
-RELEASE=1
+RELEASE=2
 CATEGORY="X11"
 SUMMARY="Shared MIME info database"
 DESCRIPTION="This package contains the core database of common types and the
@@ -15,6 +15,18 @@ PATCH_URI="http://pkgs.fedoraproject.org/cgit/shared-mime-info.git/plain/0001-Re
 PATCH_URI+=" 0.90-category-chemical.patch"
 # treat .bat and .exe as natively executable, and classify DLLs
 PATCH_URI+=" 1.5-cygwin-exe.patch"
+
+PKG_NAMES="${NAME} ${NAME}-devel"
+shared_mime_info_CONTENTS="
+	etc/postinstall/*
+	etc/preremove/*
+	usr/bin/update-mime-database.exe
+	usr/share/doc/${NAME}/
+	usr/share/man/man1/update-mime-database.1*
+	usr/share/mime/packages/
+"
+shared_mime_info_devel_REQUIRES=${NAME}
+shared_mime_info_devel_CONTENTS="usr/share/pkgconfig/"
 
 MAKEOPTS+=" -j1"
 
@@ -37,6 +49,3 @@ src_install() {
 	# (although it has translatable strings, it is listed in POTFILES.skip)
 	rm -fr ${D}/usr/share/locale/
 }
-
-shared_mime_info_CONTENTS="etc/postinstall etc/preremove/ usr/bin/ usr/share/doc/
-	usr/share/man/ usr/share/mime/packages/ usr/share/pkgconfig/"
