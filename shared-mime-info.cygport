@@ -2,7 +2,7 @@ inherit gnome2
 
 NAME="shared-mime-info"
 VERSION=1.6
-RELEASE=2
+RELEASE=3
 CATEGORY="X11"
 SUMMARY="Shared MIME info database"
 DESCRIPTION="This package contains the core database of common types and the
@@ -48,4 +48,13 @@ src_install() {
 	# The po/ files are just for intltool; up-m-db isn't localized
 	# (although it has translatable strings, it is listed in POTFILES.skip)
 	rm -fr ${D}/usr/share/locale/
+
+	dodir /etc/postinstall /etc/preremove
+	cat > ${D}/etc/postinstall/zp_${NAME}.sh <<EOF
+/usr/bin/update-mime-database -n /usr/share/mime
+EOF
+	cat > ${D}/etc/preremove/${NAME}.sh <<EOF
+find /usr/share/mime -mindepth 1 ! -path '*/mime/packages*' -delete
+EOF
+	chmod +x ${D}/etc/{postinstall,preremove}/*.sh
 }
