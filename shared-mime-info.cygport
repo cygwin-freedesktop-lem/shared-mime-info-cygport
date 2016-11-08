@@ -1,8 +1,8 @@
 inherit gnome2
 
 NAME="shared-mime-info"
-VERSION=1.6
-RELEASE=3
+VERSION=1.7
+RELEASE=1
 CATEGORY="X11"
 SUMMARY="Shared MIME info database"
 DESCRIPTION="This package contains the core database of common types and the
