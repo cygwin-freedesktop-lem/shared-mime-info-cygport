@@ -1,7 +1,7 @@
 inherit gnome2 meson
 
 NAME="shared-mime-info"
-VERSION=2.0
+VERSION=2.1
 RELEASE=1
 CATEGORY="X11"
 SUMMARY="Shared MIME info database"
@@ -15,7 +15,7 @@ source freedesktop.sub.experimental
 freedesktop_setup "${NAME}" "${VERSION}"
 #freedesktop_setup "${NAME}" "@master"
 
-VERSION_XDGMIME="@6663a2288d11b37bc07f5a01b4b85dcd377787e1"
+VERSION_XDGMIME="@de283fc430460b9b3a7e61432a6d273cd64cb102"
 # VERSION_XDGMIME="@master"
 SRC_URI+=" "$(freedesktop_src_uri "xdgmime" "${VERSION_XDGMIME}")
 SRC_DIR_XDGMIME=$(freedesktop_src_dir "xdgmime" "${VERSION_XDGMIME}")
@@ -27,8 +27,6 @@ SRC_URI+="
 
 # don't try to open ODF files with file-roller/engrampa/ark
 PATCH_URI="https://src.fedoraproject.org/rpms/shared-mime-info/raw/f33/f/0001-Remove-sub-classing-from-OO.o-mime-types.patch"
-# data: Fix pkg-config installation path
-PATCH_URI+=" https://src.fedoraproject.org/rpms/shared-mime-info/raw/f33/f/0001-data-Fix-pkg-config-installation-path.patch"
 # for chemical-mime-data
 PATCH_URI+=" 2.0-category-chemical.patch"
 # treat .bat and .exe as natively executable, and classify DLLs
@@ -91,4 +89,12 @@ EOF
 find /usr/share/mime -mindepth 1 ! -path '*/mime/packages*' -delete
 EOF
 	chmod +x ${D}/etc/{postinstall,preremove}/*.sh
+}
+
+src_test() {
+  cd ${S}
+  meson test -C ${CHOST} \
+    --no-rebuild --print-errorlogs \
+    --timeout-multiplier=4
+  # Timeout multiplier is set, so that even slow machines can pass the tests.
 }
