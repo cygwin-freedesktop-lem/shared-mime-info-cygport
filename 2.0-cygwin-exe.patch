@@ -1,14 +1,15 @@
---- origsrc/shared-mime-info-1.5/freedesktop.org.xml.in	2015-11-22 14:21:45.982826400 -0600
-+++ src/shared-mime-info-1.5/freedesktop.org.xml.in	2015-11-22 14:16:39.124273600 -0600
-@@ -2717,6 +2717,7 @@ command to generate the output files.
+diff -ur origsrc/shared-mime-info-2.0/data/freedesktop.org.xml.in src/shared-mime-info-2.0/data/freedesktop.org.xml.in
+--- origsrc/shared-mime-info-2.0/data/freedesktop.org.xml.in
++++ src/shared-mime-info-2.0/data/freedesktop.org.xml.in
+@@ -2991,6 +2991,7 @@
    </mime-type>
    <mime-type type="application/x-ms-dos-executable">
-     <_comment>DOS/Windows executable</_comment>
+     <comment>DOS/Windows executable</comment>
 +    <sub-class-of type="application/x-executable"/>
      <generic-icon name="application-x-executable"/>
      <magic priority="50">
        <match type="string" value="MZ" offset="0"/>
-@@ -3257,6 +3258,9 @@ command to generate the output files.
+@@ -3556,6 +3557,9 @@
        <match type="string" mask="0xffffffff000000000000000000000000ff" value="\177ELF            \003" offset="0"/>
      </magic>
      <glob pattern="*.so"/>
@@ -17,4 +18,4 @@
 +    <glob pattern="*.oct"/>
    </mime-type>
    <mime-type type="application/x-shellscript">
-     <_comment>shell script</_comment>
+     <comment>shell script</comment>

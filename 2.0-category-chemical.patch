@@ -1,0 +1,11 @@
+diff -ur origsrc/shared-mime-info-2.0/src/update-mime-database.c src/shared-mime-info-2.0/src/update-mime-database.c
+--- origsrc/shared-mime-info-2.0/src/update-mime-database.c
++++ src/shared-mime-info-2.0/src/update-mime-database.c
+@@ -65,6 +65,7 @@
+ 	"x-epoc",
+ 	"x-scheme-handler",
+ 	"font",
++	"chemical",
+ };
+ 
+ /* Represents a MIME type */
