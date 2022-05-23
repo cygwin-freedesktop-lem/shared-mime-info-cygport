@@ -1,7 +1,7 @@
 inherit gnome2 meson
 
 NAME="shared-mime-info"
-VERSION=2.1
+VERSION=2.2
 RELEASE=1
 CATEGORY="X11"
 SUMMARY="Shared MIME info database"
@@ -15,7 +15,7 @@ source freedesktop.sub.experimental
 freedesktop_setup "${NAME}" "${VERSION}"
 #freedesktop_setup "${NAME}" "@master"
 
-VERSION_XDGMIME="@de283fc430460b9b3a7e61432a6d273cd64cb102"
+VERSION_XDGMIME="@95e31875b257058e482342095c72050e4ed56ae3"
 # VERSION_XDGMIME="@master"
 SRC_URI+=" "$(freedesktop_src_uri "xdgmime" "${VERSION_XDGMIME}")
 SRC_DIR_XDGMIME=$(freedesktop_src_dir "xdgmime" "${VERSION_XDGMIME}")
@@ -26,11 +26,11 @@ SRC_URI+="
 
 
 # don't try to open ODF files with file-roller/engrampa/ark
-PATCH_URI="https://src.fedoraproject.org/rpms/shared-mime-info/raw/f33/f/0001-Remove-sub-classing-from-OO.o-mime-types.patch"
+PATCH_URI="https://src.fedoraproject.org/rpms/shared-mime-info/raw/rawhide/f/0001-Remove-sub-classing-from-OO.o-mime-types.patch"
 # for chemical-mime-data
 PATCH_URI+=" 2.0-category-chemical.patch"
 # treat .bat and .exe as natively executable, and classify DLLs
-PATCH_URI+=" 2.0-cygwin-exe.patch"
+PATCH_URI+=" 2.1-cygwin-exe.patch"
 
 BUILD_REQUIRES="\
   meson\

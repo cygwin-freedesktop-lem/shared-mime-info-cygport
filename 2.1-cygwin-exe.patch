@@ -1,18 +1,17 @@
-diff -ur origsrc/shared-mime-info-2.0/data/freedesktop.org.xml.in src/shared-mime-info-2.0/data/freedesktop.org.xml.in
---- origsrc/shared-mime-info-2.0/data/freedesktop.org.xml.in
-+++ src/shared-mime-info-2.0/data/freedesktop.org.xml.in
-@@ -2991,6 +2991,7 @@
+--- origsrc/shared-mime-info-2.2/data/freedesktop.org.xml.in
++++ src/shared-mime-info-2.2/data/freedesktop.org.xml.in
+@@ -3134,6 +3134,7 @@
    </mime-type>
    <mime-type type="application/x-ms-dos-executable">
      <comment>DOS/Windows executable</comment>
 +    <sub-class-of type="application/x-executable"/>
      <generic-icon name="application-x-executable"/>
-     <magic priority="50">
+     <magic>
        <match type="string" value="MZ" offset="0"/>
-@@ -3556,6 +3557,9 @@
-       <match type="string" mask="0xffffffff000000000000000000000000ff" value="\177ELF            \003" offset="0"/>
+@@ -3701,6 +3702,9 @@
      </magic>
      <glob pattern="*.so"/>
+     <glob weight="60" pattern="*.so.[0-9]*"/>
 +    <glob pattern="*.dll"/>
 +    <glob pattern="*.cmxs"/>
 +    <glob pattern="*.oct"/>
