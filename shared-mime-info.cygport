@@ -1,7 +1,7 @@
 inherit gnome2 meson
 
 NAME="shared-mime-info"
-VERSION=2.2
+VERSION=2.4
 RELEASE=1
 CATEGORY="X11"
 SUMMARY="Shared MIME info database"
@@ -19,7 +19,7 @@ source freedesktop.sub.experimental
 freedesktop_setup "${NAME}" "${VERSION}"
 #freedesktop_setup "${NAME}" "@master"
 
-VERSION_XDGMIME="@95e31875b257058e482342095c72050e4ed56ae3"
+VERSION_XDGMIME="@179296748e92bd91bf531656632a1056307fb7b7"
 # VERSION_XDGMIME="@master"
 SRC_URI+=" "$(freedesktop_src_uri "xdgmime" "${VERSION_XDGMIME}")
 SRC_DIR_XDGMIME=$(freedesktop_src_dir "xdgmime" "${VERSION_XDGMIME}")
@@ -31,10 +31,8 @@ SRC_URI+="
 
 # don't try to open ODF files with file-roller/engrampa/ark
 PATCH_URI="https://src.fedoraproject.org/rpms/shared-mime-info/raw/rawhide/f/0001-Remove-sub-classing-from-OO.o-mime-types.patch"
-# for chemical-mime-data
-PATCH_URI+=" 2.0-category-chemical.patch"
 # treat .bat and .exe as natively executable, and classify DLLs
-PATCH_URI+=" 2.1-cygwin-exe.patch"
+PATCH_URI+=" 2.4-cygwin-exe.patch"
 
 BUILD_REQUIRES="\
   meson\
@@ -45,6 +43,7 @@ BUILD_REQUIRES="\
   libglib2.0-devel\
   libiconv-devel\
   libxml2-devel\
+  docbook-xml412\
 "
 
 PKG_NAMES="${NAME} ${NAME}-devel"
@@ -62,7 +61,11 @@ shared_mime_info_devel_CONTENTS="usr/share/pkgconfig/"
 
 MAKEOPTS+=" -j1"
 
+# Note: Compiling on Cygin will fail with '-Dcpp_std=c++17',
+# which has been specified as default in meson.build
+# since version 2.3.
 CYGMESON_ARGS="
+  -Dcpp_std=none
   -Dupdate-mimedb=false
   -Dxdgmime-path=../${SRC_DIR_XDGMIME}
 "
