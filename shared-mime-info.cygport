@@ -9,6 +9,10 @@ DESCRIPTION="This package contains the core database of common types and the
 update-mime-database command used to extend it."
 HOMEPAGE="https://freedesktop.org/wiki/Software/shared-mime-info"
 
+LICENSE="GPL-2.0-or-later"
+# cf. https://www.cygwin.com/packaging-hint-files.html#pvr-src.hint
+#     https://spdx.org/licenses/GPL-2.0-or-later.html
+
 source freedesktop.sub.experimental
 
 # Set SRC_URI and SRC_DIR
