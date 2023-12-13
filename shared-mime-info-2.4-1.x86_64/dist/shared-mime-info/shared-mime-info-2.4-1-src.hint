@@ -1,0 +1,9 @@
+category: X11
+build-depends: cygport meson ninja pkg-config itstool xmlto libglib2.0-devel libiconv-devel libxml2-devel docbook-xml412
+sdesc: "Shared MIME info database"
+ldesc: "This package contains the core database of common types and the
+update-mime-database command used to extend it."
+skip:
+
+homepage: https://freedesktop.org/wiki/Software/shared-mime-info
+license: GPL-2.0-or-later
